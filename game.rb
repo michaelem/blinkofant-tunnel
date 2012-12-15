@@ -2,8 +2,8 @@ require '../blinkofant-ruby/screen'
 require '../blinkofant-ruby/device'
 
 module BlinkofantTunnel
-	scr = Screen.new(panels = 1)
-	dev = Device.new
+	scr = Blinkofant::Screen.new(panels = 1)
+	dev = Blinkofant::Device.new
 
 	while(true)
 		scr[1][1]
