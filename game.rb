@@ -3,6 +3,7 @@ require '../blinkofant-ruby/device'
 
 require './pixel'
 require './joystick'
+require './level'
 
 class Game
   @@fps = 25
@@ -13,8 +14,13 @@ class Game
     j1 = Joystick.new
     p1 = Pixel.new(screen)
 
+    level = Level.new(screen)
     loop {
       _start = Time.now.usec
+      screen = screen.new
+      
+      level.move
+      level.draw
 
       p1.action(j1.action)
       p1.draw
