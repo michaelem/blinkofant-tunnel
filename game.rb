@@ -18,7 +18,7 @@ class Game
 
       p1.action(j1.action)
       p1.draw
-      device.flushs(screen)
+      device.flush(screen)
       sleep(1/@@fps.to_f)
 
       _end = Time.now.usec
