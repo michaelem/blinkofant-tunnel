@@ -9,7 +9,7 @@ class Game
 
   def self.run
     screen = Blinkofant::Screen.new(1)
-    device = Blinkofant::Device.new(screen)
+    device = Blinkofant::Device.new
     j1 = Joystick.new
     p1 = Pixel.new(screen)
 
@@ -18,7 +18,7 @@ class Game
 
       p1.action(j1.action)
       p1.draw
-      device.flushs
+      device.flushs(screen)
       sleep(1/@@fps.to_f)
 
       _end = Time.now.usec
