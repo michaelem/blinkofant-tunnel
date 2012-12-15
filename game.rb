@@ -17,7 +17,6 @@ class Game
     level = Level.new(screen)
     loop {
       _start = Time.now.usec
-      screen = screen.new
       
       level.move
       level.draw
