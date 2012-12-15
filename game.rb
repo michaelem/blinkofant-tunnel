@@ -7,6 +7,6 @@ module BlinkofantTunnel
 
 	while(true)
 		scr[1,1] = true
-		device.flush(scr)
+		dev.flush(scr)
 	end
 end
