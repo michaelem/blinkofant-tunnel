@@ -6,6 +6,7 @@ class Level
     @width = 5
     @last_align = 4
 
+    @panels = 1
     @geometry = 
           [ Array.new(@panels * 8, false),
             Array.new(@panels * 8, false),
