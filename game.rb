@@ -1,14 +1,30 @@
 require '../blinkofant-ruby/screen'
 require '../blinkofant-ruby/device'
 
-module BlinkofantTunnel
-	scr = Blinkofant::Screen.new(1)
-	dev = Blinkofant::Device.new
+require './pixel'
+require './joystick'
 
-	while(true)
-		scr[1,1] = true
-		scr[5,5] = true
-		dev.flush(scr)
-		sleep(0.1)
-	end
+class Game
+  @@fps = 25
+
+  def self.run
+    screen = Screen.new
+    device = Device.new(screen)
+    j1 = Joystick.new
+    p1 = Pixel.new(screen)
+
+    loop {
+      _start = Time.now.usec
+
+      p1.action(j1.action)
+      p1.draw
+      device.flushs
+      sleep(1/@@fps.to_f)
+
+      _end = Time.now.usec
+      puts "#{(_end - _start)/1000.0} ms"
+    }
+  end
 end
+
+Game.run
