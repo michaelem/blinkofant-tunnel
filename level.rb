@@ -22,7 +22,7 @@ class Level
   def move()
     @pos = @pos + 1
     @geometry << @geometry.shift
-    @geometry.last = [true, true, false, false, false, false, true, true]
+    @geometry[-1] = [true, true, false, false, false, false, true, true]
   end
 
   def draw
