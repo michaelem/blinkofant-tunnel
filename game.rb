@@ -8,7 +8,7 @@ class Game
   @@fps = 25
 
   def self.run
-    screen = Blinkofant::Screen.new
+    screen = Blinkofant::Screen.new(1)
     device = Blinkofant::Device.new(screen)
     j1 = Joystick.new
     p1 = Pixel.new(screen)
