@@ -6,7 +6,6 @@ module BlinkofantTunnel
 	dev = Blinkofant::Device.new
 
 	while(true)
-		puts 
 		scr[1,1] = true
 		scr[5,5] = true
 		dev.flush(scr)
