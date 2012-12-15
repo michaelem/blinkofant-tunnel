@@ -8,5 +8,6 @@ module BlinkofantTunnel
 	while(true)
 		scr[1,1] = true
 		dev.flush(scr)
+		sleep(10)
 	end
 end
